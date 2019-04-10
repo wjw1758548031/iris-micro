@@ -1,0 +1,249 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "商城API",
+    "title": "商城API",
+    "version": "0.0.1"
+  },
+  "host": "localhost:4006/api/v1",
+  "paths": {
+    "/buy_goods": {
+      "post": {
+        "security": [
+          {
+            "authorizationHeaderToken": []
+          }
+        ],
+        "description": "购买商品",
+        "tags": [
+          "购买商品"
+        ],
+        "summary": "购买商品",
+        "operationId": "BuyGoodsParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "number",
+                  "format": "double",
+                  "x-go-name": "Amount"
+                },
+                "coin": {
+                  "type": "string",
+                  "x-go-name": "Coin"
+                },
+                "goods_id": {
+                  "type": "number",
+                  "format": "double",
+                  "x-go-name": "GoodsId"
+                },
+                "goods_name": {
+                  "type": "string",
+                  "x-go-name": "GoodsName"
+                },
+                "memo": {
+                  "type": "string",
+                  "x-go-name": "Memo"
+                },
+                "price": {
+                  "type": "number",
+                  "format": "double",
+                  "x-go-name": "Price"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ResponseSuccess"
+          },
+          "400": {
+            "$ref": "#/responses/ResponseError"
+          }
+        }
+      }
+    },
+    "/get_goods_list": {
+      "get": {
+        "description": "查询商品列表",
+        "tags": [
+          "查询商品列表"
+        ],
+        "summary": "查询商品列表",
+        "operationId": "GetGoodsListParam",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ResponseSuccess"
+          },
+          "400": {
+            "$ref": "#/responses/ResponseError"
+          }
+        }
+      }
+    },
+    "/get_goods_order": {
+      "post": {
+        "description": "查询商品订单",
+        "tags": [
+          "查询商品订单"
+        ],
+        "summary": "查询商品订单",
+        "operationId": "GetGoodsOrder",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ResponseSuccess"
+          },
+          "400": {
+            "$ref": "#/responses/ResponseError"
+          }
+        }
+      }
+    },
+    "/get_goods_stock": {
+      "post": {
+        "security": [
+          {
+            "authorizationHeaderToken": []
+          }
+        ],
+        "description": "用户查询商品库存",
+        "tags": [
+          "用户查询商品库存"
+        ],
+        "summary": "用户查询商品库存",
+        "operationId": "GetGoodsStockParam",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ResponseSuccess"
+          },
+          "400": {
+            "$ref": "#/responses/ResponseError"
+          }
+        }
+      }
+    },
+    "/insert_goods": {
+      "post": {
+        "security": [
+          {
+            "authorizationHeaderToken": []
+          }
+        ],
+        "description": "发布商品",
+        "tags": [
+          "发布商品"
+        ],
+        "summary": "发布商品",
+        "operationId": "InsertGoodsParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "goods_name": {
+                  "description": "in: query",
+                  "type": "string",
+                  "x-go-name": "GoodsName"
+                },
+                "image_url": {
+                  "type": "string",
+                  "x-go-name": "ImageUrl"
+                },
+                "price": {
+                  "type": "number",
+                  "format": "double",
+                  "x-go-name": "Price"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ResponseSuccess"
+          },
+          "400": {
+            "$ref": "#/responses/ResponseError"
+          }
+        }
+      }
+    },
+    "/update_goods_order": {
+      "post": {
+        "security": [
+          {
+            "authorizationHeaderToken": []
+          }
+        ],
+        "description": "修改商品订单流程",
+        "tags": [
+          "修改商品订单流程"
+        ],
+        "summary": "修改商品订单流程",
+        "operationId": "UpdateGoodsOrderParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "description": "in: query",
+                  "type": "integer",
+                  "format": "int64",
+                  "x-go-name": "Amount"
+                },
+                "goods_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "x-go-name": "GoodsId"
+                },
+                "goods_name": {
+                  "type": "string",
+                  "x-go-name": "GoodsName"
+                },
+                "goods_order_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "x-go-name": "GoodsOrderId"
+                },
+                "memo": {
+                  "type": "string",
+                  "x-go-name": "Memo"
+                },
+                "status": {
+                  "type": "integer",
+                  "format": "int64",
+                  "x-go-name": "Status"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ResponseSuccess"
+          },
+          "400": {
+            "$ref": "#/responses/ResponseError"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "authorizationHeaderToken": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

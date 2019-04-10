@@ -1,0 +1,26 @@
+mongodb:
+  url: mongodb://47.101.201.47/pay
+rabbitMQ:
+  url: amqp://localhost:5672/
+redis:
+  address: 127.0.0.1:6379
+  db: 1
+  password: 123456
+webchat:
+  title: 薪付宝充值
+  appId: wx1dd913423b9a692f
+  appSecret: tc98d3ec3ec8d12e0968ddad34d7cda57
+  paySecret: 9nYt4LqyDDZoRBTv3lnZLWzIASZIzY8E
+  mchId: 1489777612
+baiduAI:
+  apiKey: znKGt2Qm4LPFyDTWyvjfGgD7
+  secretKey: WkIgHSGLjCO4Z8GjjoAwRUK3yGwkgZyG
+web:
+  debug: true
+  secretKey: U4WhvqM9TLbVg1Z#
+  port: 4001
+  bindDomain: false
+  walletUrl: http://127.0.0.1
+  baseCoinList: ["CNY", "BTC"]
+  #  签名用于短信和邮件
+  sign: 薪付宝

@@ -1,0 +1,37 @@
+mongodb:
+  url: mongodb://47.101.201.47/pay
+redis:
+  address: 127.0.0.1:6379
+  db: 1
+  password:
+#email:
+#  host: smtpdm-ap-southeast-1.aliyun.com
+#  port: 465
+#  account: noreply@s.sendcode.io
+#  password: FTsr5y7GHvdt4
+#  isEncrypt: true
+aliyunOSS:
+  endPoint: http://oss-cn-hangzhou.aliyuncs.com
+  region: oss-cn-hangzhou
+  baseURL: https://xinfubao.oss-cn-hangzhou.aliyuncs.com
+  accessKeyId: KrrJurCq1W17J3ys
+  accessKeySecret: T7BpTRu13rU17eT6G3fHywDmlJSxQc
+  bucket: xinfubao
+webchat:
+  appId: wx1dd913423b9a692f
+  appSecret: c98d3ec3ec8d12e0968ddad34d7cda57
+  paySecret: 9nYt4LqyDDZoRBTv3lnZLWzIASZIzY8E
+#sms:
+##  短信平台名称
+#  name: mysubmail
+#  appId: 25695
+#  signature: 37ad51d78e196678632e9f4fdd44abf3
+web:
+  debug: true
+  secretKey: U4WhvqM9TLbVg1Z#
+  port: 4001
+  bindDomain: false
+  walletUrl: http://127.0.0.1
+  baseCoinList: ["CNY", "BTC"]
+#  签名用于短信和邮件
+  sign: 薪付宝
